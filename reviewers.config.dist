@@ -1,0 +1,7 @@
+[whitelist "projects"]
+project = "^some-project-name$"
+project = ".*-performance-tests$"
+
+[whitelist "groups"]
+group = "^teamA$"
+group = "^team[0-9]+$"
