@@ -28,14 +28,15 @@ public class GroupsProvider {
 
     List<String> getGroupNamesByEmail(String email) throws OrmException {
         reviewDb = schemaFactory.open();
-
-        List<String> groupNames = new ArrayList<>();
-
-        for (AccountGroupMember group : getGroupsByEmail(email)) {
-            groupNames.add(getGroupName(group));
+        try {
+            List<String> groupNames = new ArrayList<>();
+            for (AccountGroupMember group : getGroupsByEmail(email)) {
+                groupNames.add(getGroupName(group));
+            }
+            return groupNames;
+        } finally {
+            reviewDb.close();
         }
-
-        return groupNames;
     }
 
     private ResultSet<AccountGroupMember> getGroupsByEmail(String email) throws OrmException {

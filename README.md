@@ -4,7 +4,7 @@
 
 This plugin allows to add reviewers in [Gerrit](https://www.gerritcodereview.com/) tool automatically.
 
-Tested with version **2.11.3**
+Tested with version **2.12.2**
 
 ## Idea
 
@@ -29,7 +29,7 @@ Checkout source:
 git clone git@github.com:pszpiler/gerrit-reviewers-plugin.git
 ```
 
-Generate jar file `gerrit-reviewers-plugin-1.0.0.jar`
+Generate jar file `gerrit-reviewers-plugin-<version>.jar`
 
 ```shell
 mvn clean package
@@ -37,10 +37,10 @@ mvn clean package
 
 The file should be inside `target` dir
 
-Copy jar file `gerrit-reviewers-plugin-1.0.0.jar` into `<GERRIT_PATH>/plugins/` dir:
+Copy jar file `gerrit-reviewers-plugin-<version>.jar` into `<GERRIT_PATH>/plugins/` dir:
 
 ```shell
-cp target/gerrit-reviewers-plugin-1.0.0.jar <GERRIT_PATH>/plugins/
+cp target/gerrit-reviewers-plugin-<version>.jar <GERRIT_PATH>/plugins/
 ```
 
 Based on `reviewers.config.dist` create your own configuration file `reviewers.config`

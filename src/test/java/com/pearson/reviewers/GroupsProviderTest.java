@@ -115,5 +115,7 @@ public class GroupsProviderTest {
         assertEquals(2, result.size());
         assertEquals(groupName01, result.get(0));
         assertEquals(groupName02, result.get(1));
+        verify(schemaFactoryMock, times(1)).open();
+        verify(reviewDbMock, times(1)).close();
     }
 }
